@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-18T00:59:15.302616+00:00",
+  "timestamp": "2024-02-20T00:54:56.152145+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -50,5 +50,133 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOLS83Ic5nQnJg",
+      "title": "Initial draft",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/pull/1",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Strongly based on lamps-dilithium-certificates and lamps-cms-sphincs-plus",
+      "createdAt": "2024-02-19T08:48:20Z",
+      "updatedAt": "2024-02-19T15:28:29Z",
+      "baseRepository": "x509-hbs/draft-x509-slhdsa",
+      "baseRefName": "main",
+      "baseRefOid": "d98768b2233db6944ed204d81dba6a19fe67eeaa",
+      "headRepository": "x509-hbs/draft-x509-slhdsa",
+      "headRefName": "dvg/initial_draft",
+      "headRefOid": "71156406bb559f39420c3905d880bd7ed68aaf9c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLS83Ic5wkdb0",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-19T14:53:22Z",
+          "updatedAt": "2024-02-19T14:53:23Z",
+          "comments": [
+            {
+              "originalPosition": 97,
+              "body": "Though of negligible size, but there is also a randomizer included in the signature. ",
+              "createdAt": "2024-02-19T14:53:23Z",
+              "updatedAt": "2024-02-19T14:53:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5wkgDg",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-19T14:58:07Z",
+          "updatedAt": "2024-02-19T14:58:07Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "Above the hypertree part of SLH-DSA was separated from the FORS part. However, here it is written that \"The parameters of the SLH-DSA hypertree include [...] the number of FORS trees\". I would change it to \r\n\"The parameters of SLH-DSA include ...\".",
+              "createdAt": "2024-02-19T14:58:07Z",
+              "updatedAt": "2024-02-19T14:58:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5wkgvy",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-19T14:59:21Z",
+          "updatedAt": "2024-02-19T14:59:21Z",
+          "comments": [
+            {
+              "originalPosition": 103,
+              "body": "My opinion: If we include the hash function as a paramter of the scheme, we should also include \"small vs. fast\" as a parameter.",
+              "createdAt": "2024-02-19T14:59:21Z",
+              "updatedAt": "2024-02-19T14:59:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5wkhfu",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-19T15:00:45Z",
+          "updatedAt": "2024-02-19T15:00:45Z",
+          "comments": [
+            {
+              "originalPosition": 129,
+              "body": "Did we decide to leave out SHA2-parameters for level III and V due to the discussion on the forum? Is it really decided in that way? If yes, I missed that. ",
+              "createdAt": "2024-02-19T15:00:45Z",
+              "updatedAt": "2024-02-19T15:00:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5wkzuO",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-19T15:28:29Z",
+          "updatedAt": "2024-02-19T15:28:29Z",
+          "comments": [
+            {
+              "originalPosition": 169,
+              "body": "My optinion: This paragraph belongs to the section \"SLH-DSA Hash-based Signature Algorithm Overview\"",
+              "createdAt": "2024-02-19T15:28:29Z",
+              "updatedAt": "2024-02-19T15:28:29Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
