@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-22T00:55:14.544238+00:00",
+  "timestamp": "2024-02-25T00:59:19.439612+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -49,31 +49,90 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOLS83Ic6AEUh4",
+      "title": "Should we expose the \"SLH-DSA Hash-based Signature Algorithm Overview\" section?",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/issues/2",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "I added a \"SLH-DSA Hash-based Signature Algorithm Overview\" section copied from draft-ietf-lamps-cms-sphincs-plus but it is commented out in the markdown.\r\n\r\nIn my opinion, our draft should contain this section and it should be removed from draft-ietf-lamps-cms-sphincs-plus, which should reference our draft more.  But that's something to decide among the authors of both drafts, and so I don't want to make any changes to this text until that is decided, so that the texts don't get out of sync.\r\n\r\nIf we use the text, @BashiriK had some comments on it in #1 which can be addressed when we add the text:\r\nhttps://github.com/x509-hbs/draft-x509-slhdsa/pull/1/files#r1494667760\r\nhttps://github.com/x509-hbs/draft-x509-slhdsa/pull/1/files#r1494674721\r\nhttps://github.com/x509-hbs/draft-x509-slhdsa/pull/1/files#r1494676398\r\nhttps://github.com/x509-hbs/draft-x509-slhdsa/pull/1/files#r1494726908",
+      "createdAt": "2024-02-22T09:31:20Z",
+      "updatedAt": "2024-02-22T09:31:20Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOLS83Ic6AEbrJ",
+      "title": "SHA2 Parameters",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/issues/3",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "              Did we decide to leave out SHA2-parameters for level III and V due to the discussion on the forum? Is it really decided in that way? If yes, I missed that.\r\n\r\n_Originally posted by @BashiriK in https://github.com/x509-hbs/draft-x509-slhdsa/pull/1#discussion_r1494678234_\r\n            ",
+      "createdAt": "2024-02-22T09:46:11Z",
+      "updatedAt": "2024-02-22T09:46:51Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "body": "              These are the parameters from draft-ietf-lamps-cms-sphincs-plus.  Justification is in https://mailarchive.ietf.org/arch/msg/spasm/4sfCKyRYmFWa6L2-R6zH5BBPyNw/\r\n\r\nIf our draft is adopted we can reopen this issue as that discussion thread occurred before FIPS205-ipd was published.\r\n\r\n_Originally posted by @danvangeest in https://github.com/x509-hbs/draft-x509-slhdsa/pull/1#discussion_r1498944614_\r\n",
+          "createdAt": "2024-02-22T09:46:49Z",
+          "updatedAt": "2024-02-22T09:46:49Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOLS83Ic6AOQVl",
+      "title": "Say something about reduced security when many many signatures are created",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/issues/4",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The security of SLH-DSA slowly reduces below the target levels when more than 2^64 signatures have been created.  While this is not a practical number of signatures, we should still mention something about this fact in the Security Considerations section.  And maybe point out that if lower signature limit parameter sets are produced in the future, real-world use cases would have to be considered.",
+      "createdAt": "2024-02-23T14:36:25Z",
+      "updatedAt": "2024-02-23T14:36:25Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
       "id": "PR_kwDOLS83Ic5nQnJg",
       "title": "Initial draft",
       "url": "https://github.com/x509-hbs/draft-x509-slhdsa/pull/1",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "danvangeest",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "Strongly based on lamps-dilithium-certificates and lamps-cms-sphincs-plus",
       "createdAt": "2024-02-19T08:48:20Z",
-      "updatedAt": "2024-02-19T15:28:29Z",
+      "updatedAt": "2024-02-22T11:35:49Z",
       "baseRepository": "x509-hbs/draft-x509-slhdsa",
       "baseRefName": "main",
       "baseRefOid": "d98768b2233db6944ed204d81dba6a19fe67eeaa",
       "headRepository": "x509-hbs/draft-x509-slhdsa",
       "headRefName": "dvg/initial_draft",
       "headRefOid": "71156406bb559f39420c3905d880bd7ed68aaf9c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-02-22T11:35:48Z",
+      "mergedAt": "2024-02-22T11:35:48Z",
+      "mergedBy": "fluppe2",
+      "mergeCommit": {
+        "oid": "2b96f7ac6e8d89d5162d468c5bc7c51e4fbba39f"
+      },
       "comments": [],
       "reviews": [
         {
@@ -175,6 +234,57 @@
               "updatedAt": "2024-02-19T15:28:29Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5w-OFE",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "I don't plan on making changes based on the provided comments, but they are something that can be addressed after WG adoption per my reasoning in response to the comments.",
+          "createdAt": "2024-02-22T09:32:22Z",
+          "updatedAt": "2024-02-22T09:38:10Z",
+          "comments": [
+            {
+              "originalPosition": 97,
+              "body": "Will be handled with #2 if/when we expose that text.",
+              "createdAt": "2024-02-22T09:32:22Z",
+              "updatedAt": "2024-02-22T09:38:10Z"
+            },
+            {
+              "originalPosition": 103,
+              "body": "Will be handled with #2 if/when we expose that text.",
+              "createdAt": "2024-02-22T09:32:34Z",
+              "updatedAt": "2024-02-22T09:38:10Z"
+            },
+            {
+              "originalPosition": 169,
+              "body": "Will be handled with #2 if/when we expose that text.",
+              "createdAt": "2024-02-22T09:32:48Z",
+              "updatedAt": "2024-02-22T09:38:10Z"
+            },
+            {
+              "originalPosition": 129,
+              "body": "These are the parameters from draft-ietf-lamps-cms-sphincs-plus.  Justification is in https://mailarchive.ietf.org/arch/msg/spasm/4sfCKyRYmFWa6L2-R6zH5BBPyNw/\r\n\r\nIf our draft is adopted we can reopen this issue as that discussion thread occurred before FIPS205-ipd was published.",
+              "createdAt": "2024-02-22T09:36:47Z",
+              "updatedAt": "2024-02-22T09:38:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic5w_RH1",
+          "commit": {
+            "abbreviatedOid": "7115640"
+          },
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-22T11:35:37Z",
+          "updatedAt": "2024-02-22T11:35:37Z",
+          "comments": []
         }
       ]
     }
