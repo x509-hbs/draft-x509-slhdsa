@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-25T00:59:19.439612+00:00",
+  "timestamp": "2024-02-27T00:54:49.571590+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -102,9 +102,17 @@
       "labels": [],
       "body": "The security of SLH-DSA slowly reduces below the target levels when more than 2^64 signatures have been created.  While this is not a practical number of signatures, we should still mention something about this fact in the Security Considerations section.  And maybe point out that if lower signature limit parameter sets are produced in the future, real-world use cases would have to be considered.",
       "createdAt": "2024-02-23T14:36:25Z",
-      "updatedAt": "2024-02-23T14:36:25Z",
+      "updatedAt": "2024-02-26T10:01:18Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "fluppe2",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think the #signatures discussion should be left out as it doesn't help an implementer but rather poses confusion. This draft should define how to use SLH-DSA in X.509 and point to FIPS205 for the general security considerations.\r\n\r\nAlso I am unsure about the benefit of pointing towards a future discussion around the reduced number of signatures version of SPHINCS+. I think that might again rather confuse than help.",
+          "createdAt": "2024-02-26T10:01:18Z",
+          "updatedAt": "2024-02-26T10:01:18Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -120,7 +128,7 @@
       "labels": [],
       "body": "Strongly based on lamps-dilithium-certificates and lamps-cms-sphincs-plus",
       "createdAt": "2024-02-19T08:48:20Z",
-      "updatedAt": "2024-02-22T11:35:49Z",
+      "updatedAt": "2024-02-26T10:18:23Z",
       "baseRepository": "x509-hbs/draft-x509-slhdsa",
       "baseRefName": "main",
       "baseRefOid": "d98768b2233db6944ed204d81dba6a19fe67eeaa",
