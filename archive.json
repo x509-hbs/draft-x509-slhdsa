@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-29T00:54:58.195868+00:00",
+  "timestamp": "2024-03-03T00:58:30.956889+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -113,6 +113,22 @@
           "updatedAt": "2024-02-26T10:01:18Z"
         }
       ]
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOLS83Ic6Az-ha",
+      "title": "SHA2 vs SHAKE, fast vs small",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/issues/5",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Explain the differences between parameter sets with sha2 vs shake, fast vs small.\r\n\r\nFrom John Mattson:\r\n    If you explain the \"fast\" parameter sets, please describe that they have much slower verification than the \"small\" parameter sets.\r\n",
+      "createdAt": "2024-02-29T12:09:50Z",
+      "updatedAt": "2024-02-29T12:09:50Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
