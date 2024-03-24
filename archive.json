@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-21T00:57:16.953432+00:00",
+  "timestamp": "2024-03-24T01:01:33.279959+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -127,6 +127,22 @@
       "body": "Explain the differences between parameter sets with sha2 vs shake, fast vs small.\r\n\r\nFrom John Mattson:\r\n    If you explain the \"fast\" parameter sets, please describe that they have much slower verification than the \"small\" parameter sets.\r\n",
       "createdAt": "2024-02-29T12:09:50Z",
       "updatedAt": "2024-02-29T12:09:50Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOLS83Ic6DHyUu",
+      "title": "Use in PKCS#10, CMP, OCSP?",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/issues/6",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "From John Mattsson: \"For 5G use cases, I would strongly like the document to also cover use of SLH-DSA in RFC 2986 (PKCS #10), RFC 4210 (CMP), and RFC 6090 (OCSP).\"",
+      "createdAt": "2024-03-21T11:00:08Z",
+      "updatedAt": "2024-03-21T11:00:08Z",
       "closedAt": null,
       "comments": []
     }
