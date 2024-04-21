@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-18T00:56:38.286104+00:00",
+  "timestamp": "2024-04-21T01:01:50.489096+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -327,6 +327,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOLS83Ic5tKZ0D",
+      "title": "Rename to draft-ietf-x509-slhdsa.",
+      "url": "https://github.com/x509-hbs/draft-x509-slhdsa/pull/7",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-19T12:02:44Z",
+      "updatedAt": "2024-04-19T12:02:44Z",
+      "baseRepository": "x509-hbs/draft-x509-slhdsa",
+      "baseRefName": "main",
+      "baseRefOid": "2b96f7ac6e8d89d5162d468c5bc7c51e4fbba39f",
+      "headRepository": "x509-hbs/draft-x509-slhdsa",
+      "headRefName": "dvg/rename",
+      "headRefOid": "b527310679b70b1ce1b4c2f634a3fecb2de59a9b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
