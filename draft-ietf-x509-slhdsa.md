@@ -5,21 +5,21 @@ category: std
 stand_alone: true # This lets us do fancy auto-generation of references
 ipr: trust200902
 
-docname: draft-gazdag-x509-slhdsa-latest
+docname: draft-ietf-x509-slhdsa-latest
 submissiontype: IETF
 v: 3
-# area: sec
-# workgroup: LAMPS - Limited Additional Mechanisms for PKIX and SMIME
+area: sec
+workgroup: LAMPS - Limited Additional Mechanisms for PKIX and SMIME
 keyword:
  - SLH-DSA
  - SPHINCS+
  - PQ Signatures
  - post-quantum X.509
 venue:
-#  group: LAMPS
-#  type: Working Group
-#  mail: spasm@ietf.org
-#  arch: "https://mailarchive.ietf.org/arch/browse/spasm/"
+  group: LAMPS
+  type: Working Group
+  mail: spasm@ietf.org
+  arch: "https://mailarchive.ietf.org/arch/browse/spasm/"
   github: "x509-hbs/draft-x509-slhdsa"
 
 author:
@@ -42,11 +42,7 @@ author:
     ins: D. Van Geest
     name: Daniel Van Geest
     org: CryptoNext Security
-    street: 16, Boulevard Saint-Germain
-    city: Paris
-    country: France
-    code: 75005
-    email: daniel.vangeest.ietf@gmail.com
+    email: daniel.vangeest@cryptonext-security.com
 -
     ins: S. Kousidis
     name: Stavros Kousidis
