@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-21T01:01:50.489096+00:00",
+  "timestamp": "2024-04-23T00:58:27.598431+00:00",
   "repo": "x509-hbs/draft-x509-slhdsa",
   "labels": [
     {
@@ -181,7 +181,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:53:22Z",
@@ -201,7 +201,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:58:07Z",
@@ -221,7 +221,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:59:21Z",
@@ -241,7 +241,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T15:00:45Z",
@@ -261,7 +261,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T15:28:29Z",
@@ -333,26 +333,42 @@
       "id": "PR_kwDOLS83Ic5tKZ0D",
       "title": "Rename to draft-ietf-x509-slhdsa.",
       "url": "https://github.com/x509-hbs/draft-x509-slhdsa/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "danvangeest",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-04-19T12:02:44Z",
-      "updatedAt": "2024-04-19T12:02:44Z",
+      "updatedAt": "2024-04-22T11:04:58Z",
       "baseRepository": "x509-hbs/draft-x509-slhdsa",
       "baseRefName": "main",
       "baseRefOid": "2b96f7ac6e8d89d5162d468c5bc7c51e4fbba39f",
       "headRepository": "x509-hbs/draft-x509-slhdsa",
       "headRefName": "dvg/rename",
       "headRefOid": "b527310679b70b1ce1b4c2f634a3fecb2de59a9b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-04-22T11:04:58Z",
+      "mergedAt": "2024-04-22T11:04:58Z",
+      "mergedBy": "BashiriK",
+      "mergeCommit": {
+        "oid": "8974f62eca1e27c107d158931a63cfcd83c24b8f"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOLS83Ic54EjJ-",
+          "commit": {
+            "abbreviatedOid": "b527310"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-22T11:04:53Z",
+          "updatedAt": "2024-04-22T11:04:53Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
