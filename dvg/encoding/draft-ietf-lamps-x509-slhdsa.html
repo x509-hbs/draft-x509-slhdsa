@@ -1300,7 +1300,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-slh-dsa-signatures-in-pkix">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-slh-dsa-signatures-in-pkix" class="section-name selfRef">SLH-DSA Signatures in PKIX</a>
       </h2>
-<p id="section-4-1">SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed diffculty of finding preimages for hash functions as well as several related properties of the same hash functions.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed difficulty of finding preimages for hash functions as well as several related properties of the same hash functions.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">Signatures are used in a number of different ASN.1 structures.  As shown in the ASN.1 representation from <span>[<a href="#RFC5280" class="cite xref">RFC5280</a>]</span> below, in an X.509 certificate, a signature is encoded with an algorithm identifier in the signatureAlgorithm attribute and a signatureValue attribute that contains the actual signature.<a href="#section-4-2" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-4-3">
 <pre>
@@ -1522,7 +1522,7 @@ PrivateKeyInfo), the privateKey OCTET STRING contains the raw octet string encod
 the private key. The "privateKeyAlgorithm" field uses the AlgorithmIdentifier structure.
 The structure is encoded as defined above.  If present, the "publicKey" field will hold the
 encoded key as defined in <a href="#sec-pub-keys" class="auto internal xref">Section 5</a>.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">The raw octet string represenation of a SLH-DSA is encoded directly into the PrivateKey OCTET STRING
+<p id="section-7-4">The raw octet string representation of a SLH-DSA is encoded directly into the PrivateKey OCTET STRING
 without any additional wrapping when used in the OneAsymmetricKey type.<a href="#section-7-4" class="pilcrow">¶</a></p>
 <p id="section-7-5">The following is an example of a private key encoded using the textual encoding defined in <span>[<a href="#RFC7468" class="cite xref">RFC7468</a>]</span>.<a href="#section-7-5" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-7-6">

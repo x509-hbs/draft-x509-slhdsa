@@ -200,7 +200,7 @@ Table of Contents
 4.  SLH-DSA Signatures in PKIX
 
    SLH-DSA is a digital signature scheme built upon hash functions.  The
-   security of SLH-DSA relies on the presumed diffculty of finding
+   security of SLH-DSA relies on the presumed difficulty of finding
    preimages for hash functions as well as several related properties of
    the same hash functions.
 
@@ -448,7 +448,7 @@ Table of Contents
    The structure is encoded as defined above.  If present, the
    "publicKey" field will hold the encoded key as defined in Section 5.
 
-   The raw octet string represenation of a SLH-DSA is encoded directly
+   The raw octet string representation of a SLH-DSA is encoded directly
    into the PrivateKey OCTET STRING without any additional wrapping when
    used in the OneAsymmetricKey type.
 
