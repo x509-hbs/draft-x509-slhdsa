@@ -186,7 +186,7 @@ The contents of the parameters component for each algorithm are absent.
 
 # SLH-DSA Signatures in PKIX
 
-SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed diffculty of finding preimages for hash functions as well as several related properties of the same hash functions.
+SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed difficulty of finding preimages for hash functions as well as several related properties of the same hash functions.
 
 Signatures are used in a number of different ASN.1 structures.  As shown in the ASN.1 representation from {{!RFC5280}} below, in an X.509 certificate, a signature is encoded with an algorithm identifier in the signatureAlgorithm attribute and a signatureValue attribute that contains the actual signature.
 
@@ -402,7 +402,7 @@ the private key. The "privateKeyAlgorithm" field uses the AlgorithmIdentifier st
 The structure is encoded as defined above.  If present, the "publicKey" field will hold the
 encoded key as defined in {{sec-pub-keys}}.
 
-The raw octet string represenation of a SLH-DSA is encoded directly into the PrivateKey OCTET STRING
+The raw octet string representation of a SLH-DSA is encoded directly into the PrivateKey OCTET STRING
 without any additional wrapping when used in the OneAsymmetricKey type.
 
 The following is an example of a private key encoded using the textual encoding defined in {{!RFC7468}}.
