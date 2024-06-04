@@ -81,7 +81,12 @@ informative:
       Post-Quantum Cryptography: pp. 165-184
     target: https://link.springer.com/chapter/10.1007/978-3-319-79063-3_8
     title: 'Grafting Trees: A Fault Attack Against the SPHINCS Framework'
-
+  SLotH:
+    author:
+    - name: M-J. Saarinen
+    date: '2024'
+    target: https://eprint.iacr.org/2024/367.pdf
+    title: 'Accelerating SLH-DSA by Two Orders of Magnitude with a Single Hash Unit'
 
 --- abstract
 
@@ -443,7 +448,7 @@ compute the message digest of the content and the signed attributes,
 if they are present.
 
 When computing signatures, implementations SHOULD include protections
-against fault injection attacks [CMP2018].  Protections against these
+against fault injection attacks [CMP2018],[SLotH].  Protections against these
 attacks include signature verification prior to releasing the
 signature value to confirm that no error injected and generating the
 signature a few times to confirm that the same signature value is
