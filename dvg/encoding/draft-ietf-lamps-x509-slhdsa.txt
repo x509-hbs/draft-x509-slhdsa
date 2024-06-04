@@ -5,14 +5,14 @@
 LAMPS - Limited Additional Mechanisms for PKIX and SMIME      K. Bashiri
 Internet-Draft                                                       BSI
 Intended status: Standards Track                              S. Fluhrer
-Expires: 5 December 2024                                   Cisco Systems
+Expires: 6 December 2024                                   Cisco Systems
                                                                S. Gazdag
                                                               genua GmbH
                                                             D. Van Geest
                                                      CryptoNext Security
                                                              S. Kousidis
                                                                      BSI
-                                                             3 June 2024
+                                                             4 June 2024
 
 
 Internet X.509 Public Key Infrastructure: Algorithm Identifiers for SLH-
@@ -66,7 +66,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 December 2024.
+   This Internet-Draft will expire on 6 December 2024.
 
 Copyright Notice
 
@@ -494,11 +494,11 @@ Table of Contents
    if they are present.
 
    When computing signatures, implementations SHOULD include protections
-   against fault injection attacks [CMP2018].  Protections against these
-   attacks include signature verification prior to releasing the
-   signature value to confirm that no error injected and generating the
-   signature a few times to confirm that the same signature value is
-   produced each time.
+   against fault injection attacks [CMP2018],[SLotH].  Protections
+   against these attacks include signature verification prior to
+   releasing the signature value to confirm that no error injected and
+   generating the signature a few times to confirm that the same
+   signature value is produced each time.
 
 9.  IANA Considerations
 
@@ -600,6 +600,10 @@ Table of Contents
               Cryptographic Algorithm Object Identifier Range",
               RFC 8411, DOI 10.17487/RFC8411, August 2018,
               <https://www.rfc-editor.org/rfc/rfc8411>.
+
+   [SLotH]    Saarinen, M-J., "Accelerating SLH-DSA by Two Orders of
+              Magnitude with a Single Hash Unit", 2024,
+              <https://eprint.iacr.org/2024/367.pdf>.
 
 Appendix A.  ASN.1 Module
 
