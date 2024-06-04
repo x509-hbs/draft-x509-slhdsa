@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-02T01:05:30.513455+00:00",
+  "timestamp": "2024-06-04T01:02:11.445009+00:00",
   "repo": "lamps-wg/x509-slhdsa",
   "labels": [
     {
@@ -71,15 +71,15 @@
       "id": "I_kwDOLS83Ic6AEbrJ",
       "title": "SHA2 Parameters",
       "url": "https://github.com/lamps-wg/x509-slhdsa/issues/3",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "danvangeest",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "              Did we decide to leave out SHA2-parameters for level III and V due to the discussion on the forum? Is it really decided in that way? If yes, I missed that.\r\n\r\n_Originally posted by @BashiriK in https://github.com/x509-hbs/draft-x509-slhdsa/pull/1#discussion_r1494678234_\r\n            ",
       "createdAt": "2024-02-22T09:46:11Z",
-      "updatedAt": "2024-02-22T09:46:51Z",
-      "closedAt": null,
+      "updatedAt": "2024-06-03T11:24:55Z",
+      "closedAt": "2024-06-03T11:24:55Z",
       "comments": [
         {
           "author": "danvangeest",
@@ -87,6 +87,13 @@
           "body": "              These are the parameters from draft-ietf-lamps-cms-sphincs-plus.  Justification is in https://mailarchive.ietf.org/arch/msg/spasm/4sfCKyRYmFWa6L2-R6zH5BBPyNw/\r\n\r\nIf our draft is adopted we can reopen this issue as that discussion thread occurred before FIPS205-ipd was published.\r\n\r\n_Originally posted by @danvangeest in https://github.com/x509-hbs/draft-x509-slhdsa/pull/1#discussion_r1498944614_\r\n",
           "createdAt": "2024-02-22T09:46:49Z",
           "updatedAt": "2024-02-22T09:46:49Z"
+        },
+        {
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "body": "We are using all the FIPS205-ipd OIDs.",
+          "createdAt": "2024-06-03T11:24:55Z",
+          "updatedAt": "2024-06-03T11:24:55Z"
         }
       ]
     },
@@ -95,15 +102,15 @@
       "id": "I_kwDOLS83Ic6AOQVl",
       "title": "Say something about reduced security when many many signatures are created",
       "url": "https://github.com/lamps-wg/x509-slhdsa/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "danvangeest",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "The security of SLH-DSA slowly reduces below the target levels when more than 2^64 signatures have been created.  While this is not a practical number of signatures, we should still mention something about this fact in the Security Considerations section.  And maybe point out that if lower signature limit parameter sets are produced in the future, real-world use cases would have to be considered.",
       "createdAt": "2024-02-23T14:36:25Z",
-      "updatedAt": "2024-02-26T10:01:18Z",
-      "closedAt": null,
+      "updatedAt": "2024-06-03T11:25:07Z",
+      "closedAt": "2024-06-03T11:25:07Z",
       "comments": [
         {
           "author": "fluppe2",
@@ -111,6 +118,13 @@
           "body": "I think the #signatures discussion should be left out as it doesn't help an implementer but rather poses confusion. This draft should define how to use SLH-DSA in X.509 and point to FIPS205 for the general security considerations.\r\n\r\nAlso I am unsure about the benefit of pointing towards a future discussion around the reduced number of signatures version of SPHINCS+. I think that might again rather confuse than help.",
           "createdAt": "2024-02-26T10:01:18Z",
           "updatedAt": "2024-02-26T10:01:18Z"
+        },
+        {
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "body": "agreed",
+          "createdAt": "2024-06-03T11:25:07Z",
+          "updatedAt": "2024-06-03T11:25:07Z"
         }
       ]
     },
@@ -142,9 +156,24 @@
       "labels": [],
       "body": "From John Mattsson: \"For 5G use cases, I would strongly like the document to also cover use of SLH-DSA in RFC 2986 (PKCS #10), RFC 4210 (CMP), and RFC 6090 (OCSP).\"",
       "createdAt": "2024-03-21T11:00:08Z",
-      "updatedAt": "2024-03-21T11:00:08Z",
+      "updatedAt": "2024-06-03T11:26:42Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Unclear what John wants, seeing as we use similar language as many other RFCs.",
+          "createdAt": "2024-06-03T11:25:49Z",
+          "updatedAt": "2024-06-03T11:25:49Z"
+        },
+        {
+          "author": "danvangeest",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I've emailed John for clarification.  Will find him at IETF 120 / mention needing clarification for this during the presentation if he doesn't respond.",
+          "createdAt": "2024-06-03T11:26:41Z",
+          "updatedAt": "2024-06-03T11:26:41Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -367,6 +396,59 @@
           "createdAt": "2024-04-22T11:04:53Z",
           "updatedAt": "2024-04-22T11:04:53Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOLS83Ic5xSXLb",
+      "title": "Draft update",
+      "url": "https://github.com/lamps-wg/x509-slhdsa/pull/8",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "- Fix encoding text for public and private keys\r\n- Separate ASN.1 module and add PublicKeys and PublicKeys lists\r\n- Security Considerations\r\n- Sizes table",
+      "createdAt": "2024-06-03T11:32:33Z",
+      "updatedAt": "2024-06-03T15:58:03Z",
+      "baseRepository": "lamps-wg/x509-slhdsa",
+      "baseRefName": "main",
+      "baseRefOid": "d7b5b9073c9636da749c359db7255f99f8298b32",
+      "headRepository": "lamps-wg/x509-slhdsa",
+      "headRefName": "dvg/encoding",
+      "headRefOid": "126f017e1ba6446c827a987513502d3e6019a9a0",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLS83Ic581Cd6",
+          "commit": {
+            "abbreviatedOid": "126f017"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-06-03T15:53:56Z",
+          "updatedAt": "2024-06-03T15:58:03Z",
+          "comments": [
+            {
+              "originalPosition": 457,
+              "body": "Here we can give reference to the new paper of my friend Markku Saarinen who suggests further recommendations and, moreover, provides some insights into side-channel resistant implementation of SLH-DSA. ",
+              "createdAt": "2024-06-03T15:53:57Z",
+              "updatedAt": "2024-06-03T15:58:03Z"
+            },
+            {
+              "originalPosition": 457,
+              "body": "https://eprint.iacr.org/2024/367\r\n",
+              "createdAt": "2024-06-03T15:57:58Z",
+              "updatedAt": "2024-06-03T15:58:03Z"
+            }
+          ]
         }
       ]
     }
