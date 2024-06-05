@@ -1,17 +1,17 @@
 # Internet X.509 Public Key Infrastructure: Algorithm Identifiers for SLH-DSA
 
-This is the working area for the individual Internet-Draft, "Internet X.509 Public Key Infrastructure: Algorithm Identifiers for SLH-DSA".
+This is the working area for the IETF [LAMPS Working Group](https://datatracker.ietf.org/wg/lamps/documents/) Internet-Draft, "Internet X.509 Public Key Infrastructure: Algorithm Identifiers for SLH-DSA".
 
-* [Editor's Copy](https://x509-hbs.github.io/draft-x509-slhdsa/#go.draft-gazdag-x509-slhdsa.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-gazdag-x509-slhdsa)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-gazdag-x509-slhdsa)
-* [Compare Editor's Copy to Individual Draft](https://x509-hbs.github.io/draft-x509-slhdsa/#go.draft-gazdag-x509-slhdsa.diff)
+* [Editor's Copy](https://lamps-wg.github.io/x509-slhdsa/#go.draft-ietf-lamps-x509-slhdsa.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-lamps-x509-slhdsa)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-lamps-x509-slhdsa)
+* [Compare Editor's Copy to Working Group Draft](https://lamps-wg.github.io/x509-slhdsa/#go.draft-ietf-lamps-x509-slhdsa.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/x509-hbs/draft-x509-slhdsa/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/lamps-wg/x509-slhdsa/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.

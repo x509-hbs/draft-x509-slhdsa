@@ -66,11 +66,31 @@ informative:
     author:
       - org: National Institute of Standards and Technology
     date: 2016-12-20
-
+  CMP2018:
+    author:
+    - ins: L. Castelnovi
+      name: Laurent Castelnovi
+    - ins: A, Martinelli
+      name: Ange Martinelli
+    - ins: T. Prest
+      name: Thomas Prest
+    date: '2018'
+    seriesinfo:
+      Lecture Notes in Computer Science: vol 10786
+      PQCrypto: '2018'
+      Post-Quantum Cryptography: pp. 165-184
+    target: https://link.springer.com/chapter/10.1007/978-3-319-79063-3_8
+    title: 'Grafting Trees: A Fault Attack Against the SPHINCS Framework'
+  SLotH:
+    author:
+    - name: M-J. Saarinen
+    date: '2024'
+    target: https://eprint.iacr.org/2024/367.pdf
+    title: 'Accelerating SLH-DSA by Two Orders of Magnitude with a Single Hash Unit'
 
 --- abstract
 
-Digital signatures are used within X.509 certificates, Certificate Revocation Lists (CRLs), and to sign messages.  This document describes the conventions for using the Stateless Hash-Based Digital Signature Standard (SLH-DSA) in Internet X.509 certificates and certificate revocation lists.  The conventions for the associated signatures, subject public keys, and private key are also described.
+Digital signatures are used within X.509 Public Key Infrastructure such as X.509 certificates, Certificate Revocation Lists (CRLs), and to sign messages.  This document describes the conventions for using the Stateless Hash-Based Digital Signature Standard (SLH-DSA) in X.509 Public Key Infrastructure.  The conventions for the associated signatures, subject public keys, and private key are also described.
 
 \[EDNOTE: This draft is not expected to be finalized before the NIST PQC Project has standardized FIPS 205 Stateless Hash-Based Digital Signature Standard.  The current FIPS draft was published August 24, 2023 for public review.  Final versions are expected by April 2024. This specification will use object identifiers for the new algorithms that are assigned by NIST, and will use placeholders until these are released.]
 
@@ -82,11 +102,11 @@ Digital signatures are used within X.509 certificates, Certificate Revocation Li
 
 Stateless Hash-Based Digital Signatures (SLH-DSA) is a quantum-resistant digital signature scheme standardized in {{FIPS205}} \[EDNOTE: {{FIPS205-ipd}} until officially published] by the US National Institute of Standards and Technology (NIST) PQC project {{NIST-PQC}}. This document specifies the use of the SLH-DSA algorithm in Public Key Infrastructure X.509 (PKIX) certificates and Certificate Revocation Lists (CRLs).
 
-SLH-DSA offers three security levels.  The parameters for each of the security levels were chosen to provide 128 bits of security, 192 bits of security, and 256 bits of security.  A separate algorithm identifier has been assigned for SLH-DSA at each of these security levels.
+SLH-DSA offers three security levels.  The parameters for each of the security levels were chosen to provide 128 bits of security, 192 bits of security, and 256 bits of security. There are small (s) or fast (f) version of the algorithm, and the option to use SHA-256 {{?FIPS180=NIST.FIPS.180-4}} or SHAKE256 {{?FIPS202=NIST.FIPS.202}}. For example, id-alg-slh-dsa-shake-256s represents the 256-bit security level, the small version of the algorithm, and the use of SHAKE256.
 
-\[EDNOTE: TODO: sha2 vs shake, fast vs small]
+Separate algorithm identifiers have been assigned for SLH-DSA at each of these security levels, fast vs small, and SHA-256 vs SHAKE256.
 
-This specification includes conventions for the signatureAlgorithm, signatureValue, signature, and subjectPublicKeyInfo fields within Internet X.509 certificates and CRLs {{!RFC5280}}, like {{?RFC3279}} did for classic cryptography and {{?RFC5480}} did for elliptic curve cryptography.  It describes the encoding of digital signatures and public keys generated with quantum-resistant signature algorithm SLH-DSA.
+This specification includes conventions for the encoding of SLH-DSA digital signatures and public keys in the X.509 Public Key Infrastructure.
 
 <!-- End of introduction section -->
 
@@ -135,44 +155,41 @@ The fields in AlgorithmIdentifier have the following meanings:
 The OIDs are:
 
 ~~~
-    id-alg-slh-dsa-128s-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   nistAlgorithms OBJECT IDENTIFIER ::= { joint-iso-itu-t(2)
+     country(16) us(840) organization(1) gov(101) csor(3) 4 }
 
-    id-alg-slh-dsa-128f-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   sigAlgs OBJECT IDENTIFIER ::= { nistAlgorithms 3 }
 
-    id-alg-slh-dsa-128s-sha2 OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-128s OBJECT IDENTIFIER ::= { sigAlgs TBD }
 
-    id-alg-slh-dsa-128f-sha2 OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-128f OBJECT IDENTIFIER ::= { sigAlgs TBD }
 
-    id-alg-slh-dsa-192s-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-192s OBJECT IDENTIFIER ::= { sigAlgs TBD }
 
-    id-alg-slh-dsa-192f-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-192f OBJECT IDENTIFIER ::= { sigAlgs TBD }
 
-    id-alg-slh-dsa-256s-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-256s OBJECT IDENTIFIER ::= { sigAlgs TBD }
 
-    id-alg-slh-dsa-256f-shake OBJECT IDENTIFIER ::= {
-            joint-iso-itu-t(2) country(16) us(840) organization(1)
-            gov(101) csor(3) nistAlgorithm(4) sigAlgs(3) TBD }
+   id-alg-slh-dsa-sha2-256f OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-128s OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-128f OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-192s OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-192f OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-256s OBJECT IDENTIFIER ::= { sigAlgs TBD }
+
+   id-alg-slh-dsa-shake-256f OBJECT IDENTIFIER ::= { sigAlgs TBD }
 ~~~
 
 The contents of the parameters component for each algorithm are absent.
 
 # SLH-DSA Signatures in PKIX
 
-SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed diffculty of finding preimages for hash functions as well as several related properties of the same hash functions.
+SLH-DSA is a digital signature scheme built upon hash functions. The security of SLH-DSA relies on the presumed difficulty of finding preimages for hash functions as well as several related properties of the same hash functions.
 
 Signatures are used in a number of different ASN.1 structures.  As shown in the ASN.1 representation from {{!RFC5280}} below, in an X.509 certificate, a signature is encoded with an algorithm identifier in the signatureAlgorithm attribute and a signatureValue attribute that contains the actual signature.
 
@@ -217,18 +234,123 @@ The fields in SubjectPublicKeyInfo have the following meanings:
 
 * subjectPublicKey contains the byte stream of the public key.
 
-The SLH--DSA public key MUST be encoded using the ASN.1 type SLH-DSA-PublicKey:
+The following public key identifiers are defined for SLH-DSA:
 
 ~~~
-    SLH-DSA-PublicKey ::= OCTET STRING
+   pk-slh-dsa-sha2-128s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-128s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-sha2-128f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-128f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-sha2-192s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-192s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-sha2-192f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-192f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-sha2-256s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-256s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-sha2-256f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-sha2-256f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-128s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-128s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-128f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-128f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-192s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-192s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-192f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-192f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-256s PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-256s
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   pk-slh-dsa-shake-256f PUBLIC-KEY ::= {
+      IDENTIFIER id-alg-slh-dsa-shake-256f
+      -- KEY no ASN.1 wrapping --
+      CERT-KEY-USAGE
+         { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
+      -- PRIVATE-KEY no ASN.1 wrapping --
+      }
+
+   SLH-DSA-PublicKey ::= OCTET STRING
+
 ~~~
 
-where SLH-DSA-PublicKey is a concatenation of the PK.seed and PK.root values as defined in Section 9.1 of {{FIPS205}}.  These parameters MUST be encoded as a
-single OCTET STRING.  The size required to hold a SLH-DSA-PublicKey public key element is therefore 2*n bytes, where n is 16, 24, or 32, depending on the parameter set.
+Section 9.1 of {{FIPS205}} defines the raw octet string encoding of an SLH-DSA
+public key as the concatenation of the PK.seed and PK.root values. The octet
+string length is 2*n bytes, where n is 16, 24, or 32, depending on the parameter
+set. When used in a SubjectPublicKeyInfo type, the subjectPublicKey BIT STRING
+contains the raw octet string encodings of the public keys.
+
+This document defines the SLH-DSA-PublicKey ASN.1 OCTET STRING type for encoding a public key
+when not used in a SubjectPublicKeyInfo. The OCTET STRING is mapped to a
+subjectPublicKey (a value of type BIT STRING) as follows: the most significant
+bit of the OCTET STRING value becomes the most significant bit of the BIT
+STRING value, and so on; the least significant bit of the OCTET STRING
+becomes the least significant bit of the BIT STRING.
 
 The id-alg-slh-dsa-* identifiers defined in {{sec-alg-ids}} MUST be used as the algorithm field in the SubjectPublicKeyInfo sequence {{!RFC5280}} to identify a SLH-DSA public key.
-
-The SLH-DSA public key (a concatenation of seed and root that is an OCTET STRING) is mapped to a subjectPublicKey (a value of type BIT STRING) as follows: the most significant bit of the OCTET STRING value becomes the most significant bit of the BIT STRING value, and so on; the least significant bit of the OCTET STRING becomes the least significant bit of the BIT STRING.
 
 The following is an example of a \[TODO: pick an OID] public key encoded using the textual encoding defined in {{?RFC7468}}.
 
@@ -274,18 +396,17 @@ Requirements about the keyUsage extension bits defined in {{!RFC5280}} still app
    PublicKey ::= BIT STRING
 ~~~
 
-An SLH-DSA private key consists of the concatenation of 4 n-byte elements, SK.seed, SK.prf, PK.seed and PK.root as defined in Section 9.1 of {{FIPS205}}.  The size required to hold an SLH-DSA-PrivateKey private key is therefore 4*n bytes, where n is 16, 24, or 32, depending on the parameter set.
+Section 9.1 of {{FIPS205}} defines the raw octet string representation of an SLH-DSA
+private key as the concatenation of the SK.seed, SK.prf, PK.seed and PK.root values. The octet
+string length is 4*n bytes, where n is 16, 24, or 32, depending on the parameter
+set. When an SLH-DSA private key is encoded in a OneAsymmetricKey (or its predecessor
+PrivateKeyInfo), the privateKey OCTET STRING contains the raw octet string encoding of
+the private key. The "privateKeyAlgorithm" field uses the AlgorithmIdentifier structure.
+The structure is encoded as defined above.  If present, the "publicKey" field will hold the
+encoded key as defined in {{sec-pub-keys}}.
 
-For the keys defined in this document, the private key is always an opaque byte sequence.  The ASN.1 type SLH-DSA-PrivateKey is defined in this document to hold the byte sequence.  Thus, when encoding a OneAsymmetricKey object, the private key is wrapped in a SLH-DSA-PrivateKey object and wrapped by the OCTET STRING of the
-"privateKey" field.
-
-\[EDNOTE: the above paragraph is from RFC8410, and it reads to me like there's a double wrapping, i.e. OCTET STRING { OCTET STRING { private key bytes} }, however that's not the case.  Am I reading it wrong, or is the text unclear?]
-
-~~~ asn1
-   SLH-DSA-PrivateKey ::= OCTET STRING
-~~~
-
-To encode an SLH-DSA private key, the "privateKey" field will hold the encoded private key.  The "privateKeyAlgorithm" field uses the AlgorithmIdentifier structure.  The structure is encoded as defined above.  If present, the "publicKey" field will hold the encoded key as defined in {{sec-pub-keys}}.
+The raw octet string representation of a SLH-DSA is encoded directly into the PrivateKey OCTET STRING
+without any additional wrapping when used in the OneAsymmetricKey type.
 
 The following is an example of a private key encoded using the textual encoding defined in {{!RFC7468}}.
 
@@ -297,165 +418,57 @@ TODO
 
 NOTE: There exist some private key import functions that have not picked up the new ASN.1 structure OneAsymmetricKey that is defined in {{!RFC7748}}.  This means that they will not accept a private key structure that contains the public key field.  This means a balancing act needs to be done between being able to do a consistency check on the key pair and widest ability to import the key.
 
-# ASN.1 Module
-
-TODO: This is mostly copied from draft-ietf-lamps-cms-sphincs-plus; coordinate with those authors what goes in which draft.
-
-TODO: Also do the proper module stuff. Again this is just here until we figure out how to do it right.
-
-~~~~ asn.1
---
--- Object Identifiers
---
-
-id-alg-slh-dsa-128s-shake OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-128f-shake OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-128s-sha2 OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-128f-sha2 OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-192s-shake OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-192f-shake OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-256s-shake OBJECT IDENTIFIER ::= { TBD }
-
-id-alg-slh-dsa-256f-shake OBJECT IDENTIFIER ::= { TBD }
-
---
--- Signature Algorithm, Public Key, and Private Key
---
-
-sa-slh-dsa-128s-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-128s-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-128s-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-128s-shake } }
-
-sa-slh-dsa-128f-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-128f-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-128f-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-128f-shake } }
-
-sa-slh-dsa-128s-sha2 SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-128s-sha2
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-128s-sha2 }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-128s-sha2 } }
-
-sa-slh-dsa-128f-sha2 SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-128f-sha2
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-128f-sha2 }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-128f-sha2 } }
-
-sa-slh-dsa-192s-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-192s-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-192s-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-192s-shake } }
-
-sa-slh-dsa-192f-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-192f-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-192f-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-192f-shake } }
-
-sa-slh-dsa-256s-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-256s-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-256s-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-256s-shake } }
-
-sa-slh-dsa-256f-shake SIGNATURE-ALGORITHM ::= {
-    IDENTIFIER id-alg-slh-dsa-256f-shake
-    PARAMS ARE absent
-    PUBLIC-KEYS { pk-slh-dsa-256f-shake }
-    SMIME-CAPS { IDENTIFIED BY id-alg-slh-dsa-256f-shake } }
-
-pk-slh-dsa-128s-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-128s-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-128f-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-128f-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-128s-sha2 PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-128s-sha2
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-128f-sha2 PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-128f-sha2
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-192s-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-192s-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-192f-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-192f-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-256s-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-256s-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-pk-slh-dsa-256f-shake PUBLIC-KEY ::= {
-    IDENTIFIER id-alg-slh-dsa-256f-shake
-    KEY SLH-DSA-PublicKey
-    PARAMS ARE absent
-    CERT-KEY-USAGE
-        { digitalSignature, nonRepudiation, keyCertSign, cRLSign }
-    PRIVATE-KEY SLH-DSA-PrivateKey }
-
-SLH-DSA-PublicKey ::= OCTET STRING
-
-SLH-DSA-PrivateKey ::= OCTET STRING
-~~~~
-
 # Security Considerations
 
-The security considerations of [RFC5280] applies accordingly.
+The security considerations of {{RFC5280}} applies accordingly.
 
-TODO Security
+Implementations MUST protect the private keys.  Compromise of the
+private keys may result in the ability to forge signatures.
+
+When generating an SLH-DSA key pair, an implementation MUST generate
+each key pair independently of all other key pairs in the SLH-DSA
+hypertree.
+
+A SLH-DSA tree MUST NOT be used for more than 2^64 signing
+operations.
+
+The generation of private keys relies on random numbers.  The use of
+inadequate pseudo-random number generators (PRNGs) to generate these
+values can result in little or no security.  An attacker may find it
+much easier to reproduce the PRNG environment that produced the keys,
+searching the resulting small set of possibilities, rather than brute
+force searching the whole key space.  The generation of quality
+random numbers is difficult, and {{?RFC4086}} offers important guidance
+in this area.
+
+When computing signatures, the same hash function SHOULD be used to
+compute the message digest of the content and the signed attributes,
+if they are present.
+
+When computing signatures, implementations SHOULD include protections
+against fault injection attacks [CMP2018],[SLotH].  Protections against these
+attacks include signature verification prior to releasing the
+signature value to confirm that no error injected and generating the
+signature a few times to confirm that the same signature value is
+produced each time.
 
 # IANA Considerations
 
-TODO
+For the ASN.1 Module in the Appendix of this document, IANA is
+requested to assign an object identifier (OID) for the module
+identifier (TBD1) with a Description of "id-mod-x509-slh-dsa-2024". The
+OID for the module should be allocated in the "SMI Security for PKIX
+Module Identifier" registry (1.3.6.1.5.5.7.0).
 
 --- back
+
+# ASN.1 Module {#sec-asn1}
+
+~~~
+<CODE BEGINS>
+{::include X509-SLHDSA-2024.asn}
+<CODE ENDS>
+~~~
 
 # Security Strengths
 
@@ -463,21 +476,23 @@ Instead of defining the strength of a quantum algorithm in a traditional manner 
 
 The parameter sets defined for NIST security levels 1, 3 and 5 are listed in {{tab-strengths}}, along with the resulting signature size, public key, and private key sizes in bytes.
 
-| OID                       | NIST Level | Sig. (B) | Public Key (B) | Private Key (B) |
-|---                        |---         |---       |---             |---              |
-| id-alg-slh-dsa-128s-shake | 1          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-128f-shake | 1          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-128s-sha2  | 1          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-128f-sha2  | 1          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-192s-shake | 3          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-192f-shake | 3          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-256s-shake | 5          | TODO     | TODO           | TODO            |
-| id-alg-slh-dsa-256f-shake | 5          | TODO     | TODO           | TODO            |
+| OID                       | NIST Level | Sig.  | Pub. Key | Priv. Key |
+|---                        |---         |---    |---       |---        |
+| id-alg-slh-dsa-sha2-128s  | 1          | 7856  | 32       | 64        |
+| id-alg-slh-dsa-sha2-128f  | 1          | 17088 | 32       | 64        |
+| id-alg-slh-dsa-sha2-192s  | 3          | 16224 | 48       | 96        |
+| id-alg-slh-dsa-sha2-192f  | 3          | 35664 | 48       | 96        |
+| id-alg-slh-dsa-sha2-256s  | 5          | 29792 | 64       | 128       |
+| id-alg-slh-dsa-sha2-256f  | 5          | 49856 | 64       | 128       |
+| id-alg-slh-dsa-shake-128s | 1          | 7856  | 32       | 64        |
+| id-alg-slh-dsa-shake-128f | 1          | 17088 | 32       | 64        |
+| id-alg-slh-dsa-shake-192s | 3          | 16224 | 48       | 96        |
+| id-alg-slh-dsa-shake-192f | 3          | 35664 | 48       | 96        |
+| id-alg-slh-dsa-shake-256s | 5          | 29792 | 64       | 128       |
+| id-alg-slh-dsa-shake-256f | 5          | 49856 | 64       | 128       |
 {: #tab-strengths title="SLH-DSA security strengths"}
 
 # Acknowledgments
 {:numbered="false"}
 
 Much of the structure and text of this document is based on {{?I-D.ietf-lamps-dilithium-certificates}}. The remainder comes from {{?I-D.draft-ietf-lamps-cms-sphincs-plus}}. Thanks to those authors, and the ones they based their work on, for making our work earier. "Copying always makes things easier and less error prone" - {{?RFC8411}}.
-
-TODO: Hopefully others will help out.  They will be acknowledged here.  And if you've read this far...
