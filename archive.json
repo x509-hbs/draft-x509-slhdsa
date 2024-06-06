@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-06-04T01:02:11.445009+00:00",
+  "timestamp": "2024-06-06T01:01:31.602545+00:00",
   "repo": "lamps-wg/x509-slhdsa",
   "labels": [
     {
@@ -174,6 +174,22 @@
           "updatedAt": "2024-06-03T11:26:41Z"
         }
       ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOLS83Ic6LMS67",
+      "title": "pure vs predigest mode",
+      "url": "https://github.com/lamps-wg/x509-slhdsa/issues/9",
+      "state": "OPEN",
+      "author": "danvangeest",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Once NIST publishes FIPS205, decide what to do about pure vs predigest mode.  If we only support pure mode, add this text to the introduction:\r\n\r\n> The final version of {{FIPS205}} is expected to define two signature modes: pure mode and predigest mode.  This document only specifies the use of pure mode with X.509 certificates and CRLs.\r\n",
+      "createdAt": "2024-06-05T08:36:07Z",
+      "updatedAt": "2024-06-05T08:36:08Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -210,7 +226,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:53:22Z",
@@ -230,7 +246,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:58:07Z",
@@ -250,7 +266,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T14:59:21Z",
@@ -270,7 +286,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T15:00:45Z",
@@ -290,7 +306,7 @@
             "abbreviatedOid": "7115640"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-02-19T15:28:29Z",
@@ -390,7 +406,7 @@
             "abbreviatedOid": "b527310"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "APPROVED",
           "body": "",
           "createdAt": "2024-04-22T11:04:53Z",
@@ -404,24 +420,26 @@
       "id": "PR_kwDOLS83Ic5xSXLb",
       "title": "Draft update",
       "url": "https://github.com/lamps-wg/x509-slhdsa/pull/8",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "danvangeest",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "- Fix encoding text for public and private keys\r\n- Separate ASN.1 module and add PublicKeys and PublicKeys lists\r\n- Security Considerations\r\n- Sizes table",
       "createdAt": "2024-06-03T11:32:33Z",
-      "updatedAt": "2024-06-03T15:58:03Z",
+      "updatedAt": "2024-06-05T12:41:25Z",
       "baseRepository": "lamps-wg/x509-slhdsa",
       "baseRefName": "main",
       "baseRefOid": "d7b5b9073c9636da749c359db7255f99f8298b32",
       "headRepository": "lamps-wg/x509-slhdsa",
       "headRefName": "dvg/encoding",
-      "headRefOid": "126f017e1ba6446c827a987513502d3e6019a9a0",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "5d4b7e293bcb8250afdb42ed11d6ae314cca654e",
+      "closedAt": "2024-06-05T12:41:24Z",
+      "mergedAt": "2024-06-05T12:41:24Z",
+      "mergedBy": "exception42",
+      "mergeCommit": {
+        "oid": "eaed861bd918a7adf3cbdfcece30873eb8111b75"
+      },
       "comments": [],
       "reviews": [
         {
@@ -430,7 +448,7 @@
             "abbreviatedOid": "126f017"
           },
           "author": "BashiriK",
-          "authorAssociation": "CONTRIBUTOR",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2024-06-03T15:53:56Z",
@@ -449,6 +467,58 @@
               "updatedAt": "2024-06-03T15:58:03Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLS83Ic585Ql_",
+          "commit": {
+            "abbreviatedOid": "126f017"
+          },
+          "author": "exception42",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Agree with Kaveh to maybe add more references to fault attacks. Otherwise I agree with the changes.",
+          "createdAt": "2024-06-04T05:59:10Z",
+          "updatedAt": "2024-06-04T05:59:10Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLS83Ic588Iz1",
+          "commit": {
+            "abbreviatedOid": "0e54cdc"
+          },
+          "author": "exception42",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Approved",
+          "createdAt": "2024-06-04T11:43:05Z",
+          "updatedAt": "2024-06-04T11:43:05Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLS83Ic59E9eE",
+          "commit": {
+            "abbreviatedOid": "5d4b7e2"
+          },
+          "author": "BashiriK",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-06-05T08:50:46Z",
+          "updatedAt": "2024-06-05T08:50:46Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLS83Ic59F-hH",
+          "commit": {
+            "abbreviatedOid": "5d4b7e2"
+          },
+          "author": "exception42",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Approved",
+          "createdAt": "2024-06-05T10:26:53Z",
+          "updatedAt": "2024-06-05T10:26:53Z",
+          "comments": []
         }
       ]
     }
